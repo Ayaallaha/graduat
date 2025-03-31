@@ -1,0 +1,44 @@
+name: projectforgraduate
+
+description: "A new Flutter project."
+
+publish_to: 'none' # منع النشر على pub.dev افتراضيًا
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.5.2 <4.0.0' # ضبط بيئة الـ SDK وفقًا لأحدث المتطلبات
+
+dependencies:
+  flutter:
+    sdk: flutter
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  cupertino_icons: ^1.0.8
+  get: ^4.7.2
+  intl: ^0.20.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  hive_generator: ^2.0.1 # تحديث الإصدار إذا توفر جديد
+  build_runner: ^2.4.7 # تحديث الإصدار إذا توفر جديد
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  # لإضافة صور أو ملفات أخرى كمصادر، قم بإلغاء التعليق أدناه وتحديد المسارات
+  assets:
+    - assets/doctor_photo.jpeg
+    - assets/logo.jpeg
+
+  # لإضافة خطوط مخصصة، قم بإلغاء التعليق وتحديد التفاصيل أدناه
+  # fonts:
+  #   - family: CustomFont
+  #     fonts:
+  #       - asset: assets/fonts/CustomFont-Regular.ttf
+  #       - asset: assets/fonts/CustomFont-Bold.ttf
+  #         weight: 700
+
+
