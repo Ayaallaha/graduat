@@ -14,7 +14,7 @@ class DoctorDetailsView extends StatelessWidget {
         padding: EdgeInsets.all(16),
         child: Column(
           children: [
-            CircleAvatar(radius: 50, backgroundImage: NetworkImage('https://placehold.co/100x100')),
+            CircleAvatar(radius: 50, backgroundImage: NetworkImage('assets/doctor_photo.jpeg')),
             SizedBox(height: 16),
             Text(doctor.name, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
             Text(doctor.specialty),

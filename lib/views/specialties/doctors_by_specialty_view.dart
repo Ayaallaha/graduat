@@ -12,7 +12,8 @@ class DoctorsBySpecialtyView extends StatelessWidget {
   Widget build(BuildContext context) {
     final doctors = controller.doctors.where((d) => d.specialty == specialty).toList();
     return Scaffold(
-      appBar: AppBar(title: Text(specialty), centerTitle: true),
+      backgroundColor: Colors.white,
+      appBar: AppBar( backgroundColor: Color(0xff2A629A),title: Text(specialty,style: TextStyle(color: Colors.white),), ),
       body: ListView.builder(
         itemCount: doctors.length,
         itemBuilder: (context, index) {

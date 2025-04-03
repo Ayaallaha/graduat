@@ -8,15 +8,16 @@ class NotificationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Container( color: Color(0xffEBF2FA),child:Card(
       child: ListTile(
         title: Text(notification.title),
-        subtitle: Column(
+        subtitle:  Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(notification.body),
             Text(notification.timestamp),
           ],
+        ),
         ),
       ),
     );

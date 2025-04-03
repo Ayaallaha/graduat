@@ -8,9 +8,9 @@ class ReviewCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Container(color: Color(0xffEBF2FA),child: Card(
       child: ListTile(
-        leading: CircleAvatar(radius: 20, backgroundImage: NetworkImage('https://placehold.co/40x40')),
+        leading: CircleAvatar(radius: 20, backgroundImage: NetworkImage('assets/doctor_photo.jpeg')),
         title: Text('لديك مراجعة ${review.date}'),
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,6 +21,6 @@ class ReviewCard extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ),);
   }
 }

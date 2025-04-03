@@ -12,24 +12,26 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Text('app_title'.tr, style: TextStyle(color: Colors.black)),
+            Text('app_title'.tr, style: TextStyle(color: Color(0xff2A629A),),textAlign:TextAlign.center,),
             SizedBox(width: 8),
 
           ],
         ),
         leading: Builder(
           builder: (context) => IconButton(
-            icon: Icon(Icons.menu, color: Colors.black),
+            icon: Icon(Icons.menu, color: Color(0xff2A629A)),
             onPressed: () => Scaffold.of(context).openDrawer(),
           ),
         ),
       ),
       drawer: Drawer(
+        backgroundColor: Colors.white,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -81,7 +83,7 @@ class HomeView extends StatelessWidget {
             ),
             SizedBox(height: 16),
             CustomButton(
-              text: 'doctors'.tr,
+              text: 'doctors list'.tr,
               onPressed: () => Get.toNamed(AppRoutes.DOCTORS_LIST),
             ),
           ],
@@ -89,7 +91,12 @@ class HomeView extends StatelessWidget {
       ),
       bottomNavigationBar: Obx(
             () => BottomNavigationBar(
+          backgroundColor: Colors.white,
           currentIndex: homeController.selectedIndex.value,
+          selectedItemColor: Color(0xff2A629A),
+          unselectedItemColor: Color(0xff7F7F7F),
+          selectedLabelStyle: TextStyle(fontWeight: FontWeight.w100),
+          unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),
           onTap: (index) {
             homeController.changeIndex(index);
             if (index == 0) {
@@ -101,12 +108,14 @@ class HomeView extends StatelessWidget {
             }
           },
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'الرئيسية'),
-            BottomNavigationBarItem(icon: Icon(Icons.notifications), label: 'notifications'.tr),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'profile'.tr),
+            BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'الرئيسية'),
+            BottomNavigationBarItem(icon: Icon(Icons.notifications_none_outlined), label: 'notifications'.tr),
+            BottomNavigationBarItem(icon: Icon(Icons.person_outline_sharp), label: 'profile'.tr),
           ],
         ),
       ),
+
+
     );
   }
 }

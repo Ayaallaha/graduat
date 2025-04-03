@@ -29,7 +29,7 @@ class EditProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('edit_profile'.tr), centerTitle: true),
+      appBar: AppBar( backgroundColor:Color(0xff2A629A),title: Text('edit_profile'.tr,style: TextStyle(color:Colors.white ),), centerTitle: true),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16),
         child: Column(

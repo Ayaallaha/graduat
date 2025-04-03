@@ -24,9 +24,12 @@ class LoginView extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 50),
-            CircleAvatar(
-              radius: 50,
-              backgroundImage: AssetImage('assets/logo.jpeg'),
+
+            Image.asset(
+              'assets/logo.jpeg',
+              width: 200,
+              height: 200,
+              fit: BoxFit.cover,
             ),
             SizedBox(height: 20),
             Obx(
@@ -65,14 +68,14 @@ class LoginView extends StatelessWidget {
                     label: 'password'.tr,
                     obscureText: obscurePassword.value,
                     onChanged: (value) {
-                      if (value.length < 6) {
-                        passwordError.value = 'كلمة المرور يجب أن تكون 6 أحرف على الأقل';
+                      if (value.length < 5) {
+                        passwordError.value = 'كلمة المرور يجب أن تكون5 أحرف على الأقل';
                       } else {
                         passwordError.value = '';
                       }
                     },
                     suffixIcon: IconButton(
-                      icon: Icon(obscurePassword.value ? Icons.visibility : Icons.visibility_off),
+                      icon: Icon(obscurePassword.value ? Icons.visibility_off : Icons.visibility),
                       onPressed: () => obscurePassword.value = !obscurePassword.value,
                     ),
                   ),
@@ -95,9 +98,13 @@ class LoginView extends StatelessWidget {
                   controller.login(emailController.text, passwordController.text);
                 }
               },
-            ),
+            )
+            ,SizedBox(height: 70),
             TextButton(
               onPressed: () => Get.toNamed(AppRoutes.SIGNUP),
+              style: TextButton.styleFrom(
+                foregroundColor: Color(0xff2A629A),
+              ),
               child: Text('ليس لديك حساب؟ إنشاء حساب'),
             ),
           ],

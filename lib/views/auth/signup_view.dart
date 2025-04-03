@@ -33,7 +33,7 @@ class SignupView extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 50),
-            Text('signup'.tr, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+            Text('signup'.tr, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color: Color(0xff2A629A))),
             SizedBox(height: 20),
             Obx(
                   () => Column(
@@ -124,14 +124,14 @@ class SignupView extends StatelessWidget {
                     label: 'password'.tr,
                     obscureText: obscurePassword.value,
                     onChanged: (value) {
-                      if (value.length < 6) {
-                        passwordError.value = 'كلمة المرور يجب أن تكون 6 أحرف على الأقل';
+                      if (value.length < 5) {
+                        passwordError.value = 'كلمة المرور يجب أن تكون5 أحرف على الأقل';
                       } else {
                         passwordError.value = '';
                       }
                     },
                     suffixIcon: IconButton(
-                      icon: Icon(obscurePassword.value ? Icons.visibility : Icons.visibility_off),
+                      icon: Icon(obscurePassword.value ? Icons.visibility_off : Icons.visibility),
                       onPressed: () => obscurePassword.value = !obscurePassword.value,
                     ),
                     onSubmitted: (_) => dobFocus.requestFocus(),
@@ -175,8 +175,11 @@ class SignupView extends StatelessWidget {
               text: 'signup'.tr,
               onPressed: signup,
             ),
+            SizedBox(height: 60,),
             TextButton(
               onPressed: () => Get.toNamed(AppRoutes.LOGIN),
+              style: TextButton.styleFrom(
+                foregroundColor: Color(0xff2A629A),),
               child: Text('لديك حساب؟ تسجيل الدخول'),
             ),
           ],

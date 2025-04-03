@@ -30,8 +30,12 @@ class CustomTextField extends StatelessWidget {
       obscureText: obscureText,
       decoration: InputDecoration(
         labelText: label,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-        suffixIcon: suffixIcon,
+        labelStyle: TextStyle(color: Color(0xff858585)),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10),borderSide: BorderSide(color:Color(0xff858585) )),
+        focusedBorder:OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+         borderSide: BorderSide(color: Color(0xff2A629A), width: 1.5) ,)
+,        suffixIcon: suffixIcon,
       ),
       onChanged: onChanged,
       onSubmitted: onSubmitted,

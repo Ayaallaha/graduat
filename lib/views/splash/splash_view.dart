@@ -12,8 +12,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
-    print('SplashView loaded');
-    Timer(Duration(seconds: 3), () => Get.offNamed(AppRoutes.LOGIN));
+    Timer(Duration(seconds: 7), () => Get.offNamed(AppRoutes.LOGIN));
   }
 
   @override
@@ -25,7 +24,7 @@ class _SplashViewState extends State<SplashView> {
           children: [
 
             Image.asset(
-              'assets/logo.pngg',
+              'assets/logo.jpeg',
               width: 200,
               height: 200,
               fit: BoxFit.cover,
@@ -36,7 +35,7 @@ class _SplashViewState extends State<SplashView> {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.blue,
+                color: Color(0xff2A629A),
               ),
             ),
           ],

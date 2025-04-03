@@ -29,14 +29,14 @@ class _ScheduleCardState extends State<ScheduleCard> {
             leading: IconButton(
               icon: Icon(
                 isExpanded ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
-                color: Colors.grey[500],
+                color: Color(0xff2A629A),
               ),
               onPressed: () => setState(() => isExpanded = !isExpanded),
             ),
             title: Center(
               child: Text(
                 widget.day,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.normal,color: Color(0xff2A629A)),
               ),
             ),
           ),
@@ -66,11 +66,13 @@ class _ScheduleCardState extends State<ScheduleCard> {
                       }
                     },
                     child: Container(
+                      height: 35,  // تعديل الارتفاع هنا
+                      width: 75,   // تعديل العرض هنا
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         color: isBooked
                             ? Colors.grey[300]
-                            : (isSelected ? Colors.green : Colors.blue[600]),
+                            : (isSelected ? Colors.green : Color(0xff2A629A)),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Text(

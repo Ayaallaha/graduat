@@ -17,11 +17,11 @@ class BookingConfirmationView extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text('تأكيد الحجز'.tr),
+        backgroundColor: Color(0xff2A629A),
+        title: Text('تأكيد الحجز'.tr,style: TextStyle(color: Colors.white,),),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: Icon(Icons.arrow_back ,color: Colors.white,),
           onPressed: () => Get.back(),
         ),
       ),
@@ -44,7 +44,7 @@ class BookingConfirmationView extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       radius: 50,
-                      backgroundImage: NetworkImage('https://placehold.co/100x100'),
+                      backgroundImage: AssetImage('assets/doctor_photo.jpeg'),
                     ),
                     SizedBox(height: 8),
                     Text(
@@ -52,7 +52,7 @@ class BookingConfirmationView extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: Colors.blue[700],
+                        color: Color(0xff2A629A),
                       ),
                     ),
                     Text(
@@ -76,7 +76,7 @@ class BookingConfirmationView extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Icon(Icons.person, color: Colors.grey[400]),
+                        Icon(Icons.person, color: Color(0XFF2A629A)),
                         VerticalDivider(
                           color: Colors.grey[300],
                           thickness: 1,
@@ -90,6 +90,7 @@ class BookingConfirmationView extends StatelessWidget {
                                     () => Row(
                                   children: [
                                     Checkbox(
+                                      checkColor: Color(0XFF2A629A),
                                       value: isProxyBooking.value,
                                       onChanged: (value) => isProxyBooking.value = value!,
                                     ),
@@ -104,8 +105,11 @@ class BookingConfirmationView extends StatelessWidget {
                                 controller: patientNameController,
                                 decoration: InputDecoration(
                                   labelText: 'اسم المريض',
-                                  labelStyle: TextStyle(color: Colors.grey[700]),
-                                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                                  labelStyle: TextStyle(color: Color(0xffA6A6A6)),
+                                  border:  OutlineInputBorder(borderRadius: BorderRadius.circular(10),borderSide: BorderSide(color:Color(0xff858585) )),
+                                   focusedBorder:OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                    borderSide: BorderSide(color: Color(0xff2A629A), width: 1.5) ,),
                                 ),
                               ),
                               SizedBox(height: 8),
@@ -113,8 +117,11 @@ class BookingConfirmationView extends StatelessWidget {
                                 controller: phoneController,
                                 decoration: InputDecoration(
                                   labelText: 'رقم الهاتف'.tr,
-                                  labelStyle: TextStyle(color: Colors.grey[700]),
-                                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                                  labelStyle: TextStyle(color: Color(0xffA6A6A6)),
+                                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10),borderSide: BorderSide(color:Color(0xff858585) )),
+                                    focusedBorder:OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: BorderSide(color: Color(0xff2A629A), width: 1.5) ,),
                                   prefixIcon: Padding(
                                     padding: const EdgeInsets.all(12.0),
                                     child: Text('+', style: TextStyle(color: Colors.grey[700])),
@@ -129,7 +136,7 @@ class BookingConfirmationView extends StatelessWidget {
                     SizedBox(height: 16),
                     Row(
                       children: [
-                        Icon(Icons.calendar_today, color: Colors.grey[400]),
+                        Icon(Icons.calendar_today, color: Color(0XFF2A629A)),
                         VerticalDivider(
                           color: Colors.grey[300],
                           thickness: 1,
@@ -147,8 +154,9 @@ class BookingConfirmationView extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 16),
+              SizedBox(height: 20),
               ElevatedButton(
+
                 onPressed: () {
                   if (patientNameController.text.isNotEmpty && phoneController.text.isNotEmpty) {
                     controller.bookAppointment(
@@ -163,7 +171,7 @@ class BookingConfirmationView extends StatelessWidget {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Color(0xff2A629A),
                   padding: EdgeInsets.symmetric(vertical: 12, horizontal: 32),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                 ),

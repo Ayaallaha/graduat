@@ -8,8 +8,8 @@ class MyAppointmentsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('appointments'.tr), centerTitle: true),
+    return Scaffold(backgroundColor: Colors.white,
+      appBar: AppBar(backgroundColor:Color(0xff2A629A),title: Text('appointments'.tr,style: TextStyle(color:Colors.white, )), centerTitle: true),
       body: Obx(
             () => ListView.builder(
           itemCount: controller.appointments.length,

@@ -10,17 +10,24 @@ class DoctorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Padding(
+      child:Container(
+        decoration: BoxDecoration(color: Colors.white),
+        child:Padding(
         padding: EdgeInsets.all(8),
         child: Column(
           children: [
             Row(
               children: [
-                CircleAvatar(
-                  radius: 20,
-                  backgroundImage: AssetImage('assets/doctor_photo.jpeg'),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(63),
+                  child: Image.asset(
+                    'assets/doctor_photo.jpeg',
+                    width: 126,
+                    height: 126,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-                SizedBox(width: 8),
+                SizedBox(width: 12),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,17 +57,20 @@ class DoctorCard extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: onBookPressed,
-                    child: Text('حجز'),
+                    child: Text('حجز',style: TextStyle(color: Colors.white),),
                     style: ElevatedButton.styleFrom(
+
                       minimumSize: Size((MediaQuery.of(context).size.width - 36) / 2 - 1.5, 36),
+                      backgroundColor: Color(0xff72C1BC)
+
                     ),
                   ),
                   SizedBox(width: 3),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(4),
+                      color: Color(0xffF5F5F5),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                     constraints: BoxConstraints(
                       minWidth: (MediaQuery.of(context).size.width - 36) / 2 - 1.5,
@@ -72,7 +82,7 @@ class DoctorCard extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      ), )
     );
   }
 }

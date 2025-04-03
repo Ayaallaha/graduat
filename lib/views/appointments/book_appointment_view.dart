@@ -12,8 +12,8 @@ class BookAppointmentView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('حجز موعد مع ${doctor.name}'),
+      appBar: AppBar( backgroundColor: Color(0xff2A629A),
+        title: Text('حجز موعد مع ${doctor.name}',style: TextStyle(color: Colors.white),),
         centerTitle: true,
       ),
       body: ListView.builder(

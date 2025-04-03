@@ -10,7 +10,8 @@ class ReviewAppointmentsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('reviews'.tr), centerTitle: true),
+      backgroundColor: Colors.white,
+      appBar: AppBar(backgroundColor:Color(0xff2A629A),title: Text('reviews'.tr,style: TextStyle(color:Colors.white, )), centerTitle: true),
       body: Obx(
             () => ListView.builder(
           itemCount: controller.reviews.length,

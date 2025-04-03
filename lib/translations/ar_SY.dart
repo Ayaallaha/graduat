@@ -8,7 +8,7 @@ const Map<String, String> arSY = {
   'phone': 'رقم الهاتف',
   'dob': 'تاريخ الميلاد',
   'specialties': 'التخصصات الطبية',
-  'doctors': 'الأطباء',
+  'doctors list': ' قائمة الأطباء',
   'lab_tests': 'الأشعة والتحاليل',
   'appointments': 'المواعيد المحجوزة',
   'reviews': 'مواعيد المراجعة',

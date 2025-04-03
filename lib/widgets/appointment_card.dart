@@ -10,7 +10,7 @@ class AppointmentCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        leading: CircleAvatar(backgroundImage: NetworkImage('https://placehold.co/40x40')),
+        leading: CircleAvatar(backgroundImage:AssetImage('assets/doctor_photo.jpeg')),
         title: Text('موعد مع ${appointment.doctorName}'),
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

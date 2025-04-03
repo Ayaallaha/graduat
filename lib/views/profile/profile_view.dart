@@ -10,11 +10,16 @@ class ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('profile'.tr),
+        backgroundColor: Color(0xff2A629A),
+        title: Text('profile'.tr,style: TextStyle(color: Colors.white),),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back ,color: Colors.white,),
+          onPressed: () => Get.back(),
+        ),
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon(Icons.edit),
+            icon: Icon(Icons.edit,color:Colors.white ,),
             onPressed: () => Get.toNamed(AppRoutes.EDIT_PROFILE),
           ),
         ],
@@ -59,10 +64,10 @@ class ProfileView extends StatelessWidget {
           width: double.infinity,
           padding: EdgeInsets.all(12),
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey),
-            borderRadius: BorderRadius.circular(8),
+            border: Border.all(color: Color(0xff2A629A)),
+            borderRadius: BorderRadius.circular(10),
           ),
-          child: Text(value, style: TextStyle(fontSize: 16)),
+          child: Text(value, style: TextStyle(fontSize: 16,color: Color(0xff2A629A))),
         ),
       ],
     );
